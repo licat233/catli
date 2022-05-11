@@ -1,0 +1,245 @@
+html,
+body {
+  height: 100%;
+  background: #eee;
+}
+body {
+  overflow: hidden;
+}
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+.scroll-animations-container > .scrollsection {
+  padding: 10vh 10vh 10vh 10vmax;
+  min-width: 550vh;
+}
+.scroll-animations-container > .scrollsection > .item {
+  display: inline-block;
+  position: relative;
+  margin: 0 -30vh 0 3vh;
+}
+.scroll-animations-container > .scrollsection > .item::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.scroll-animations-container > .scrollsection > .item.-big {
+  height: 80vh;
+  width: 60vh;
+}
+.scroll-animations-container > .scrollsection > .item.-big.-horizontal {
+  height: 60vh;
+  width: 80vh;
+}
+.scroll-animations-container > .scrollsection > .item.-normal {
+  height: 60vh;
+  width: 45vh;
+  z-index: 1;
+}
+.scroll-animations-container > .scrollsection > .item.-normal.-horizontal {
+  height: 45vh;
+  width: 60vh;
+}
+.scroll-animations-container > .scrollsection > .item.-normal:nth-of-type(3n) {
+  bottom: 5vh;
+}
+.scroll-animations-container > .scrollsection > .item.-normal:nth-of-type(4n) {
+  bottom: -5vh;
+}
+.scroll-animations-container > .scrollsection > .item.-small {
+  height: 40vh;
+  width: 30vh;
+  z-index: 2;
+}
+.scroll-animations-container > .scrollsection > .item.-small.-horizontal {
+  height: 30vh;
+  width: 40vh;
+}
+.scroll-animations-container > .scrollsection > .item.-small:nth-of-type(3n) {
+  bottom: 13vh;
+}
+.scroll-animations-container > .scrollsection > .item.-small:nth-of-type(4n) {
+  bottom: -13vh;
+}
+.scroll-animations-container > .scrollsection > .item > .image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateX(0) translateY(0) scale(1);
+  -moz-transform: translateX(0) translateY(0) scale(1);
+  -ms-transform: translateX(0) translateY(0) scale(1);
+  -o-transform: translateX(0) translateY(0) scale(1);
+  transform: translateX(0) translateY(0) scale(1);
+  -webkit-transition: opacity 1s ease, -webkit-filter 0.3s ease, -webkit-transform 1s ease;
+  transition: opacity 1s ease, -webkit-filter 0.3s ease, -webkit-transform 1s ease;
+  -o-transition: filter 0.3s ease, opacity 1s ease, -o-transform 1s ease;
+  -moz-transition: filter 0.3s ease, opacity 1s ease, transform 1s ease, -moz-transform 1s ease;
+  transition: filter 0.3s ease, opacity 1s ease, transform 1s ease;
+  transition: filter 0.3s ease, opacity 1s ease, transform 1s ease, -webkit-filter 0.3s ease, -webkit-transform 1s ease, -moz-transform 1s ease, -o-transform 1s ease;
+}
+.scroll-animations-container > .scrollsection > .item:nth-of-type(4n) > .image {
+  -webkit-transform: translateX(-30vh) translateY(-30vh) scale(0.8);
+  -moz-transform: translateX(-30vh) translateY(-30vh) scale(0.8);
+  -ms-transform: translateX(-30vh) translateY(-30vh) scale(0.8);
+  -o-transform: translateX(-30vh) translateY(-30vh) scale(0.8);
+  transform: translateX(-30vh) translateY(-30vh) scale(0.8);
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  transition-delay: 0;
+}
+.scroll-animations-container > .scrollsection > .item:nth-of-type(4n - 1) > .image {
+  -webkit-transform: translateX(30vh) translateY(30vh) scale(0.8);
+  -moz-transform: translateX(30vh) translateY(30vh) scale(0.8);
+  -ms-transform: translateX(30vh) translateY(30vh) scale(0.8);
+  -o-transform: translateX(30vh) translateY(30vh) scale(0.8);
+  transform: translateX(30vh) translateY(30vh) scale(0.8);
+  -webkit-transition-delay: 0.05s;
+  -moz-transition-delay: 0.05s;
+  -o-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+}
+.scroll-animations-container > .scrollsection > .item:nth-of-type(4n - 2) > .image {
+  -webkit-transform: translateX(-30vh) translateY(30vh) scale(0.8);
+  -moz-transform: translateX(-30vh) translateY(30vh) scale(0.8);
+  -ms-transform: translateX(-30vh) translateY(30vh) scale(0.8);
+  -o-transform: translateX(-30vh) translateY(30vh) scale(0.8);
+  transform: translateX(-30vh) translateY(30vh) scale(0.8);
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.scroll-animations-container > .scrollsection > .item:nth-of-type(4n - 3) > .image {
+  -webkit-transform: translateX(-30vh) translateY(-30vh) scale(0.8);
+  -moz-transform: translateX(-30vh) translateY(-30vh) scale(0.8);
+  -ms-transform: translateX(-30vh) translateY(-30vh) scale(0.8);
+  -o-transform: translateX(-30vh) translateY(-30vh) scale(0.8);
+  transform: translateX(-30vh) translateY(-30vh) scale(0.8);
+  -webkit-transition-delay: 0.15s;
+  -moz-transition-delay: 0.15s;
+  -o-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+.scroll-animations-container > .scrollsection > .item > .image.-active {
+  -webkit-transform: translateX(0) translateY(0) scale(1);
+  -moz-transform: translateX(0) translateY(0) scale(1);
+  -ms-transform: translateX(0) translateY(0) scale(1);
+  -o-transform: translateX(0) translateY(0) scale(1);
+  transform: translateX(0) translateY(0) scale(1);
+  opacity: 0.8;
+  pointer-events: auto;
+  -webkit-transition: opacity 1s ease, -webkit-filter 0.3s ease, -webkit-transform 1s ease;
+  transition: opacity 1s ease, -webkit-filter 0.3s ease, -webkit-transform 1s ease;
+  -o-transition: filter 0.3s ease, opacity 1s ease, -o-transform 1s ease;
+  -moz-transition: filter 0.3s ease, opacity 1s ease, transform 1s ease, -moz-transform 1s ease;
+  transition: filter 0.3s ease, opacity 1s ease, transform 1s ease;
+  transition: filter 0.3s ease, opacity 1s ease, transform 1s ease, -webkit-filter 0.3s ease, -webkit-transform 1s ease, -moz-transform 1s ease, -o-transform 1s ease;
+}
+.scroll-animations-container > .scrollsection > .item > .image.-clicked {
+  -webkit-transform: translateX(0) translateY(0) scale(5);
+  -moz-transform: translateX(0) translateY(0) scale(5);
+  -ms-transform: translateX(0) translateY(0) scale(5);
+  -o-transform: translateX(0) translateY(0) scale(5);
+  transform: translateX(0) translateY(0) scale(5);
+  opacity: 0;
+  pointer-events: auto;
+  -webkit-transition: opacity 1s ease, -webkit-filter 0.3s ease, -webkit-transform 1s ease;
+  transition: opacity 1s ease, -webkit-filter 0.3s ease, -webkit-transform 1s ease;
+  -o-transition: filter 0.3s ease, opacity 1s ease, -o-transform 1s ease;
+  -moz-transition: filter 0.3s ease, opacity 1s ease, transform 1s ease, -moz-transform 1s ease;
+  transition: filter 0.3s ease, opacity 1s ease, transform 1s ease;
+  transition: filter 0.3s ease, opacity 1s ease, transform 1s ease, -webkit-filter 0.3s ease, -webkit-transform 1s ease, -moz-transform 1s ease, -o-transform 1s ease;
+}
+.scroll-animations-container > .scrollsection > .item > .image.-active:hover {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  opacity: 1;
+  cursor: pointer;
+}
+.fake-ui {
+  font-size: 1rem;
+}
+.fake-ui > .logo {
+  position: fixed;
+  top: 2vh;
+  left: 2vh;
+  height: 3vh;
+  width: 2.5vh;
+  border: solid 1vh #999;
+}
+.fake-ui > .logo .logo-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.fake-ui > .logo .logo-box img {
+  width: 100%;
+}
+.fake-ui > .nav {
+  position: fixed;
+  top: 2vh;
+  right: 2vh;
+}
+.fake-ui > .nav > .item {
+  background: #999;
+  display: inline-block;
+  height: 2vh;
+  width: 10vh;
+  margin-left: 2vh;
+  text-align: center;
+  color: #fff;
+  line-height: 2vh;
+  cursor: pointer;
+}
+.fake-ui > .footer {
+  position: fixed;
+  bottom: 3vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 2vh;
+  width: 40vh;
+  background: #999;
+  text-align: center;
+}
+.fake-ui > .footer a {
+  text-decoration: none;
+  color: #bbbbbb;
+  font-size: 0.8rem;
+  display: block;
+}
