@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { Component, ReactNode, useEffect, useRef, useState } from 'react';
 import "locomotive-scroll/dist/locomotive-scroll.min.css";
 import LocomotiveScroll from 'locomotive-scroll';
-import "./gallery.css";
+require("./gallery.css");
 
-export default function Gallery() {
+export default function Gallery(): JSX.Element {
     const [images, setImages] = useState<ImageInfo[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const scroll = useRef<any>(null);
@@ -31,18 +31,18 @@ export default function Gallery() {
         return new LocomotiveScroll({
             el: document.querySelector('.scroll-animations-container'),
             direction: 'horizontal',
-            // gestureDirection: 'horizontal',
             smooth: true,
-            lerp: 0.1,
+            lerp: 0.05,
             tablet: {
                 smooth: true,
-                // breakpoint: 1024
+                direction: "horizontal",
+                horizontalGesture: true,
             },
             smartphone: {
-                smooth: true
-            },
-            // scrollFromAnywhere: true,
-            // reloadOnContextChange: true
+                smooth: true,
+                direction: "horizontal",
+                horizontalGesture: true,
+            }
         });
     }
 
@@ -51,11 +51,11 @@ export default function Gallery() {
         [].forEach.call(totalImages, (image: HTMLImageElement) => {
             image.addEventListener('click', () => {
                 image.classList.add('-clicked');
-                hideImages(totalImages);
+                hideAllImages(totalImages);
             });
         });
         setTimeout(() => {
-            showImages(totalImages);
+            showAllImages(totalImages);
         }, 1000);
     }
 
@@ -63,9 +63,10 @@ export default function Gallery() {
         if (!isLoading) {
             requestImages().finally(() => {
                 resetAllEvent();
+                scroll.current.update();
             })
         }
-        
+
         if (!scroll.current) {
             scroll.current = newScroll();
             scroll.current.init();
@@ -81,31 +82,32 @@ export default function Gallery() {
                 target && scroll.current?.scrollTo(target)
             })
         }
-        scroll.current.update();
 
-
-
-        // return () => {
-        //     scroll.current.destroy();
-        //     scroll.current = null;
-        // };
+        return () => {
+            scroll.current.destroy();
+            scroll.current = null;
+        };
     }, []);
 
-    function showImages(totalImages: NodeListOf<HTMLImageElement>) {
+    function showAllImages(totalImages: NodeListOf<HTMLImageElement>) {
         [].forEach.call(totalImages, (image: HTMLImageElement) => {
             image.classList.remove('-clicked');
             image.classList.add('-active');
         });
     }
 
-    function hideImages(totalImages: NodeListOf<HTMLImageElement>) {
+    function hideAllImages(totalImages: NodeListOf<HTMLImageElement>) {
         [].forEach.call(totalImages, (image: HTMLImageElement) => {
             image.classList.remove('-active');
         });
 
         setTimeout(() => {
-            showImages(totalImages);
+            showAllImages(totalImages);
         }, 2000);
+    }
+    function clickImage(e: any) {
+        const totalImages = document.querySelectorAll(".image");
+        hideAllImages(totalImages as NodeListOf<HTMLImageElement>)
     }
     function Item(image: ImageInfo, index: number) {
         let mark = "";
@@ -121,11 +123,6 @@ export default function Gallery() {
             size = "-small";
         }
         const className = `item ${size} ${mark}`;
-        // const imgRef = useRef(null)
-        const clickImgHandler = (e: any) => {
-            console.log(e.target);
-        };
-
         return (
             <div
                 className={className}
@@ -136,9 +133,11 @@ export default function Gallery() {
                 <img
                     src={image.url}
                     className="image"
-                    onClick={clickImgHandler}
+                    key={index}
+                    title={image.name}
+                    onClick={clickImage}
                     alt={image.alt}
-                    key={index} />
+                />
             </div>
         );
     }
