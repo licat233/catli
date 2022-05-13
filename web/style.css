@@ -6,14 +6,14 @@ body {
 body {
   overflow: hidden;
 }
-img {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: default;
-  pointer-events: none;
-}
+/*img {*/
+/*  -webkit-user-select: none;*/
+/*  -moz-user-select: none;*/
+/*  -ms-user-select: none;*/
+/*  user-select: none;*/
+  /*cursor: default;*/
+/*  pointer-events: none;*/
+/*}*/
 .scroll-animations-container > .scrollsection {
   padding: 10vh 10vh 10vh 10vmax;
   min-width: 550vh;
@@ -172,7 +172,7 @@ img {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
   opacity: 1;
-  cursor: pointer;
+  /*cursor: pointer;*/
 }
 .fake-ui {
   font-size: 1rem;
@@ -241,5 +241,9 @@ img {
   text-decoration: none;
   color: #bbbbbb;
   font-size: 0.8rem;
+  line-height: 2vh;
   display: block;
+}
+.image {
+    cursor: url('plus_cursor.png') 25 25, auto;
 }

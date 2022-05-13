@@ -85,21 +85,25 @@ function Catli() {
             smooth: true,
             lerp: 0.05,
             tablet: {
-                smooth: true
+                smooth: true,
+                direction: "horizontal",
+                horizontalGesture: true,
             },
             smartphone: {
-                smooth: true
+                smooth: true,
+                direction: "horizontal",
+                horizontalGesture: true,
             }
         });
         eleEvent(scroll);
         images = root.querySelectorAll('.image');
-
-        [].forEach.call(images, (image) => {
-            image.addEventListener('click', () => {
-                image.classList.add('-clicked');
-                hideImages();
-            });
-        });
+        Intense(images);
+        // [].forEach.call(images, (image) => {
+        //     image.addEventListener('click', () => {
+        //         image.classList.add('-clicked');
+        //         hideImages();
+        //     });
+        // });
         setTimeout(showImages, 1000);
     }
     this.Init().finally(() => {
