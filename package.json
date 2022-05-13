@@ -10,6 +10,7 @@
     "@types/node": "^16.11.34",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
+    "locomotive-scroll": "^4.1.4",
     "photoswipe": "^5.2.7",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

@@ -1,5 +1,5 @@
 /// <reference path="./index.d.ts" />
-
+declare module 'locomotive-scroll';
 interface ImageInfo {
     name: string;
     url: string;

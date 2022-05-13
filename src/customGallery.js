@@ -3,7 +3,7 @@ import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
 import { render } from '@testing-library/react';
 
-export default function Gallery(props) {
+function Gallery(props) {
   this.imageBox = (image, index) => {
     let mark = "";
     if (index % 2) {
