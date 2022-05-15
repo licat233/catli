@@ -13,8 +13,7 @@ img {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    cursor: default;
-    pointer-events: none;
+    cursor: pointer;
 }
 
 .scroll-animations-container {
@@ -23,68 +22,68 @@ img {
         min-width: 550vh;
     }
 
-    >.scrollsection>.item {
+    >.scrollsection .item {
         display: inline-block;
         position: relative;
         margin: 0 -30vh 0 3vh;
     }
 
-    >.scrollsection>.item::before {
+    >.scrollsection .item::before {
         content: '';
         display: inline-block;
         vertical-align: middle;
         height: 100%;
     }
 
-    >.scrollsection>.item.-big {
+    >.scrollsection .item.-big {
         height: 80vh;
         width: 60vh;
     }
 
-    >.scrollsection>.item.-big.-horizontal {
+    >.scrollsection .item.-big.-horizontal {
         height: 60vh;
         width: 80vh;
     }
 
-    >.scrollsection>.item.-normal {
+    >.scrollsection .item.-normal {
         height: 60vh;
         width: 45vh;
         z-index: 1;
     }
 
-    >.scrollsection>.item.-normal.-horizontal {
+    >.scrollsection .item.-normal.-horizontal {
         height: 45vh;
         width: 60vh;
     }
 
-    >.scrollsection>.item.-normal:nth-of-type(3n) {
+    >.scrollsection .item.-normal:nth-of-type(3n) {
         bottom: 5vh;
     }
 
-    >.scrollsection>.item.-normal:nth-of-type(4n) {
+    >.scrollsection .item.-normal:nth-of-type(4n) {
         bottom: -5vh;
     }
 
-    >.scrollsection>.item.-small {
+    >.scrollsection .item.-small {
         height: 40vh;
         width: 30vh;
         z-index: 2;
     }
 
-    >.scrollsection>.item.-small.-horizontal {
+    >.scrollsection .item.-small.-horizontal {
         height: 30vh;
         width: 40vh;
     }
 
-    >.scrollsection>.item.-small:nth-of-type(3n) {
+    >.scrollsection .item.-small:nth-of-type(3n) {
         bottom: 13vh;
     }
 
-    >.scrollsection>.item.-small:nth-of-type(4n) {
+    >.scrollsection .item.-small:nth-of-type(4n) {
         bottom: -13vh;
     }
 
-    >.scrollsection>.item>.image {
+    >.scrollsection .item .image {
         height: 100%;
         width: 100%;
         position: absolute;
@@ -93,7 +92,8 @@ img {
         -webkit-filter: grayscale(1);
         filter: grayscale(1);
         opacity: 0;
-        pointer-events: none;
+        // pointer-events: none;
+        // cursor: url('plus_cursor.png') 25 25, auto;
         -webkit-transform: translateX(0) translateY(0) scale(1);
         -moz-transform: translateX(0) translateY(0) scale(1);
         -ms-transform: translateX(0) translateY(0) scale(1);
@@ -124,7 +124,7 @@ img {
             -o-transform 1s ease;
     }
 
-    >.scrollsection>.item:nth-of-type(4n)>.image {
+    >.scrollsection .item:nth-of-type(4n)>.image {
         -webkit-transform: translateX(-30vh) translateY(-30vh) scale(.8);
         -moz-transform: translateX(-30vh) translateY(-30vh) scale(.8);
         -ms-transform: translateX(-30vh) translateY(-30vh) scale(.8);
@@ -136,7 +136,7 @@ img {
         transition-delay: 0;
     }
 
-    >.scrollsection>.item:nth-of-type(4n - 1)>.image {
+    >.scrollsection .item:nth-of-type(4n - 1)>.image {
         -webkit-transform: translateX(30vh) translateY(30vh) scale(.8);
         -moz-transform: translateX(30vh) translateY(30vh) scale(.8);
         -ms-transform: translateX(30vh) translateY(30vh) scale(.8);
@@ -148,7 +148,7 @@ img {
         transition-delay: .05s;
     }
 
-    >.scrollsection>.item:nth-of-type(4n - 2)>.image {
+    >.scrollsection .item:nth-of-type(4n - 2)>.image {
         -webkit-transform: translateX(-30vh) translateY(30vh) scale(.8);
         -moz-transform: translateX(-30vh) translateY(30vh) scale(.8);
         -ms-transform: translateX(-30vh) translateY(30vh) scale(.8);
@@ -160,7 +160,7 @@ img {
         transition-delay: .1s;
     }
 
-    >.scrollsection>.item:nth-of-type(4n - 3)>.image {
+    >.scrollsection .item:nth-of-type(4n - 3)>.image {
         -webkit-transform: translateX(-30vh) translateY(-30vh) scale(.8);
         -moz-transform: translateX(-30vh) translateY(-30vh) scale(.8);
         -ms-transform: translateX(-30vh) translateY(-30vh) scale(.8);
@@ -172,13 +172,13 @@ img {
         transition-delay: .15s;
     }
 
-    >.scrollsection>.item>.image.-active {
+    >.scrollsection .item .image.-active {
         -webkit-transform: translateX(0) translateY(0) scale(1);
         -moz-transform: translateX(0) translateY(0) scale(1);
         -ms-transform: translateX(0) translateY(0) scale(1);
         -o-transform: translateX(0) translateY(0) scale(1);
         transform: translateX(0) translateY(0) scale(1);
-        opacity: .8;
+        opacity: .9;
         pointer-events: auto;
         -webkit-transition: opacity 1s ease,
             -webkit-filter .3s ease,
@@ -205,7 +205,7 @@ img {
             -o-transform 1s ease;
     }
 
-    >.scrollsection>.item>.image.-clicked {
+    >.scrollsection .item .image.-clicked {
         -webkit-transform: translateX(0) translateY(0) scale(5);
         -moz-transform: translateX(0) translateY(0) scale(5);
         -ms-transform: translateX(0) translateY(0) scale(5);
@@ -238,7 +238,7 @@ img {
             -o-transform 1s ease;
     }
 
-    >.scrollsection>.item>.image.-active:hover {
+    >.scrollsection .item .image.-active:hover {
         height: 100%;
         width: 100%;
         position: absolute;
@@ -247,10 +247,10 @@ img {
         -webkit-filter: grayscale(0);
         filter: grayscale(0);
         opacity: 1;
+        // cursor: url('plus_cursor.png') 25 25, auto;
         cursor: pointer;
     }
 }
-
 
 .fake-ui {
     font-size: 1rem;
@@ -283,7 +283,14 @@ img {
             width: 100%;
 
             img {
+                -webkit-filter: grayscale(1);
+                filter: grayscale(1);
                 width: 100%;
+            }
+
+            img:hover {
+                -webkit-filter: grayscale(0);
+                filter: grayscale(0);
             }
         }
     }
@@ -324,6 +331,7 @@ img {
             text-decoration: none;
             color: rgb(187, 187, 187);
             font-size: 0.8rem;
+            line-height: 2vh;
             display: block;
         }
     }

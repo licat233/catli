@@ -1,6 +1,7 @@
 import React, { Component, ReactNode, useEffect, useRef, useState } from 'react';
 import "locomotive-scroll/dist/locomotive-scroll.min.css";
 import LocomotiveScroll from 'locomotive-scroll';
+import { BaseResponse, ImageInfo } from '../typings';
 require("./gallery.css");
 
 export default function Gallery(): JSX.Element {
@@ -12,10 +13,10 @@ export default function Gallery(): JSX.Element {
         if (isLoading) return
         setIsLoading(true);
         const res = await new Promise((resolve: (value: ImageInfo[]) => void, reject: (reason?: any) => void) => {
-            fetch("//pic.catli.net/api/images").then(resp => resp.json())
+            fetch("//img.catli.net/api/v1/share").then(resp => resp.json())
                 .then((res: BaseResponse) => {
-                    if (res.success) {
-                        resolve(res.data);
+                    if (res.status) {
+                        resolve(res.data.images.data);
                     } else {
                         reject(res);
                     }
